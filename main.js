@@ -45,3 +45,14 @@ let questionSetThree = [{
   answer: `Pete`
 }
 ]
+
+function checkAnswer(question, answer) {
+    let userAnswer = readlineSync.question(question)
+    if (userAnswer.toLowerCase() === answer.toLowerCase()) {
+      console.log(chalk.green(`You have answered correctly.\n`))
+      userScore++
+    } else {
+      console.log(chalk.red(`You have answered the incorrectly.\n`))
+    }
+    console.log(`Your current score - ${userScore}\n`)
+  }
