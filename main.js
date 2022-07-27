@@ -13,35 +13,35 @@ let topPerformers = {
 }
 
 let questionSetOne = [{
-  question: `Which of Angela's cats did Dwight kill?`,
+  question: `Which of Angela's cats did Dwight kill? `,
   answer: `Sprinkles`
 }, {
-  question: `Who was Pam engaged to before Jim?`,
+  question: `Who was Pam engaged to before Jim? `,
   answer: `Roy`
 }, {
-  question: `At Phyllis' wedding, Michael revealed that her nickname in high school was what?`,
+  question: `At Phyllis' wedding, Michael revealed that her nickname in high school was what? `,
   answer: `Easy Rider`
 }
 ]
 let questionSetTwo = [{
-  question: `Who was hired as Michael Scott's replacement before he moved?`,
+  question: `Who was hired as Michael Scott's replacement before he moved? `,
   answer: `Deangelo Vickers`
 }, {
-  question: `What was the name of Jan Levinson's assistant at corporate?`,
+  question: `What was the name of Jan Levinson's assistant at corporate? `,
   answer: `Hunter`
 }, {
-  question: `Who came up with Suck It?`,
+  question: `Who came up with Suck It? `,
   answer: `David Wallace`
 }
 ]
 let questionSetThree = [{
-  question: `Michael and Dwight tried to steal clients from which local competing business?`,
+  question: `Michael and Dwight tried to steal clients from which local competing business? `,
   answer: `Prince Paper Company`
 }, {
-  question: `How much does Bob Vance bid on a hug from his wife Phyllis?(Number in Dollars)`,
+  question: `How much does Bob Vance bid on a hug from his wife Phyllis?(Number in Dollars) `,
   answer: `4000`
 }, {
-  question: `What was Plop's actual name?`,
+  question: `What was Plop's actual name? `,
   answer: `Pete`
 }
 ]
@@ -55,4 +55,28 @@ function checkAnswer(question, answer) {
       console.log(chalk.red(`You have answered the incorrectly.\n`))
     }
     console.log(`Your current score - ${userScore}\n`)
+  }
+
+  function quizLevelOne() {
+    for (let initialValue = 0; initialValue < questionSetOne.length; initialValue++) {
+      let currentQuestion = questionSetOne[initialValue]
+      console.log(`Question ${initialValue + 1} - `)
+      checkAnswer(currentQuestion.question, currentQuestion.answer)
+    }
+  }
+  
+  function quizLevelTwo() {
+    for (let initialValue = 0; initialValue < questionSetTwo.length; initialValue++) {
+      let currentQuestion = questionSetTwo[initialValue]
+      console.log(`Question ${initialValue + 4} - `)
+      checkAnswer(currentQuestion.question, currentQuestion.answer)
+    }
+  }
+  
+  function quizLevelThree() {
+    for (let initialValue = 0; initialValue < questionSetThree.length; initialValue++) {
+      let currentQuestion = questionSetThree[initialValue]
+      console.log(`Question ${initialValue + 7} - `)
+      checkAnswer(currentQuestion.question, currentQuestion.answer)
+    }
   }
