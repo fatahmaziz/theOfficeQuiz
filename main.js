@@ -80,3 +80,34 @@ function checkAnswer(question, answer) {
       checkAnswer(currentQuestion.question, currentQuestion.answer)
     }
   }
+
+  function topScore() {
+    console.log(chalk.green(`Your have scored ${userScore} points.\n`))
+  
+    console.log(`Leaderboard - \n`)
+  
+    topPerformers.userPlace = userName
+    topPerformers.userScore = userScore
+  
+    if (userScore == 3) {
+      console.log(chalk.blue.bold(`1. ${topPerformers.userPlace} has scored ${topPerformers.userScore}\n`))
+      console.log(`2. ${topPerformers.firstPlace} has scored ${topPerformers.firstScore}\n`)
+      console.log(`3. ${topPerformers.secondPlace} has scored ${topPerformers.secondScore}\n`)
+      console.log(`Congratulations!!! You have been placed first on the leaderboard.\n`)
+    } else if (userScore == 2) {
+      console.log(`1. ${topPerformers.firstPlace} has scored ${topPerformers.firstScore}\n`)
+      console.log(chalk.blue.bold(`2. ${topPerformers.userPlace} has scored ${topPerformers.userScore}\n`))
+      console.log(`3. ${topPerformers.secondPlace} has scored ${topPerformers.secondScore}\n`)
+      console.log(`Congratulations!!! You have been placed second on the leaderboard. Play again to better your score.\n`)
+    } else if (userScore == 1) {
+      topPerformers.thirdPlace = userName
+      console.log(`1. ${topPerformers.firstPlace} has scored ${topPerformers.firstScore}\n`)
+      console.log(`2. ${topPerformers.secondPlace} has scored ${topPerformers.secondScore}\n`)
+      console.log(chalk.blue.bold(`3. ${topPerformers.userPlace} has scored ${topPerformers.userScore}\n`))
+      console.log(`Congratulations!!! You have been placed third on the leaderboard. Play again to better your score.\n`)
+    } else {
+      console.log(`You scored ${userScore}, hence you cannot be placed on the leaderboard`)
+    }
+  
+    console.log(`Take a screenshot and send it in get your name displayed on the leaderboard permanently.`)
+  }
